@@ -2,10 +2,11 @@
 import net.minecraft.src.ic2.api.CropCard;
 import net.minecraft.src.ic2.api.TECrop;
 import net.minecraft.src.*;
+import net.minecraft.src.forge.*;
 
 public class VineCrop extends CropCard {
     public VineCrop(int id) {
-        CropCard.registerBaseSeed(new ItemStack(Block.vine.id, 1, 0), id, 1, 10, 10, 10);
+        CropCard.registerBaseSeed(new ItemStack(Block.vine.blockID, 1, 0), id, 1, 10, 10, 10);
     }
 
     @Override
@@ -24,7 +25,7 @@ public class VineCrop extends CropCard {
     }
 
     @Override
-    public int stat(int) {
+    public int stat(int n) {
         switch(n) {
         case 0: return 0;   // not chemical
         case 1: return 0;   // not edible
@@ -68,7 +69,7 @@ public class VineCrop extends CropCard {
 
     @Override
     public ItemStack getGain(TECrop crop) {
-        return new ItemStack(Block.vines);
+        return new ItemStack(Block.vine);
     }
 
     @Override
@@ -77,31 +78,31 @@ public class VineCrop extends CropCard {
     }
 
     @Override
-    public boolean rightclick(TECRop crop, EntityPlayer player) {
+    public boolean rightclick(TECrop crop, EntityPlayer player) {
         World world = crop.worldObj;
         if (world.isRemote) {
             return true;
         }
 
         // based on DebugCrop
-        player.addChatMessage(, "GGR: " + crop.statGrowth + ", " + crop.statGain
+        player.addChatMessage("GGR: " + crop.statGrowth + ", " + crop.statGain
                    + ", " + crop.statResistance);
 
-        player.addChatMessage(, "Stage: " + crop.size);
+        player.addChatMessage("Stage: " + crop.size);
 
         try {
             int growth = crop.getClass().getField("growthPoints").getInt(crop);
-            player.addChatMessage(, "Growth points: " + growth + "/"
+            player.addChatMessage("Growth points: " + growth + "/"
                        + growthDuration(crop));
         } catch (NoSuchFieldException e) { }
           catch (IllegalAccessException e) { }
 
-        player.addChatMessage(, "Humidity, Nutrients, Air Quality"
+        player.addChatMessage("Humidity, Nutrients, Air Quality"
                    + ": " + crop.getHumidity()
                    + ", " + crop.getNutrients()
                    + ", " + crop.getAirQuality());
 
-        player.addChatMessage(, "Water and Fertilizer Storage: " + crop.waterStorage
+        player.addChatMessage("Water and Fertilizer Storage: " + crop.waterStorage
                    + ", " + crop.nutrientStorage);
 
         return true;

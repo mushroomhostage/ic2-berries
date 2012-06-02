@@ -1,5 +1,9 @@
 
 import net.minecraft.src.*;
+import net.minecraft.src.forge.*;
+import net.minecraft.client.Minecraft;
+import net.minecraft.src.ic2.api.CropCard;
+import java.io.*;
 
 public class mod_Berries extends NetworkMod {
     // TODO: refactor
@@ -16,18 +20,10 @@ public class mod_Berries extends NetworkMod {
         cropid_vine = 60;
     }
 
- 
-    public mod_Berries() {
-    }
-
     public void load() {
         CropCard.registerCrop(new VineCrop(cropid_vine), cropid_vine);
 
         MinecraftForgeClient.preloadTexture("/berries_crops.png");   // TODO
-    }
-
-    public String getVersion() {
-        return "0";
     }
 
     public String getVersion() {

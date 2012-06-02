@@ -1,5 +1,8 @@
 
 import net.minecraft.src.*;
+import net.minecraft.src.forge.*;
+import net.minecraft.src.ic2.api.CropCard;
+import java.io.*;
 
 public class mod_Berries extends NetworkMod {
     public final int cropid_vine;
