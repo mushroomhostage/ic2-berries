@@ -43,17 +43,26 @@ public class VineCrop extends CropCard {
 
     @Override
     public int getSpriteIndex(TECrop crop) {
-        return 0; // TODO
+        return crop.size - 1;
+    }
+
+    @Override
+    public String getTextureFile() {
+        return "/berries_crops.png";
     }
 
     @Override
     public boolean canGrow(TECrop crop) {
-        return crop.size < 2;
+        // Grows in three stages:
+        // 1 - initially planted
+        // 2 - partially grown
+        // 3 - fully grown and harvestable
+        return crop.size < 3;
     }
 
     @Override
     public boolean canBeHarvested(TECrop crop) {
-        return crop.size == 2;
+        return crop.size == 3;
     }
 
     @Override
@@ -74,7 +83,8 @@ public class VineCrop extends CropCard {
 
     @Override
     public byte getSizeAfterHarvest(TECrop crop) {
-        return 1;
+        // return to partially grown state when harvested
+        return 2;
     }
 
     @Override

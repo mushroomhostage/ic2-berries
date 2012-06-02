@@ -2,7 +2,10 @@
 pushd ..
 ./reobfuscate.sh
 
+rm -rf reobf/minecraft{,_server}/ic2
+
 pushd reobf/minecraft
+cp ../../port-berries++/client/*.png .
 zip -r ../../port-berries++/Berries++-1.0-client-r1.zip .
 popd
 
