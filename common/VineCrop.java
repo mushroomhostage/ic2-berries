@@ -16,7 +16,7 @@ public class VineCrop extends CropCard {
 
     @Override
     public String discoveredBy() {
-        return "Notch";
+        return "jeb_";
     }
 
     @Override
@@ -73,12 +73,13 @@ public class VineCrop extends CropCard {
 
     @Override
     public int growthDuration(TECrop crop) {
-        return 225;     // as fast as pumpkin stems
+        //return 225;     // as fast as pumpkin stems
+        return 40;
     }
 
     @Override
     public ItemStack getGain(TECrop crop) {
-        return new ItemStack(Block.vine);
+        return new ItemStack(Block.vine, 2);
     }
 
     @Override
@@ -87,6 +88,7 @@ public class VineCrop extends CropCard {
         return 2;
     }
 
+    /*
     @Override
     public boolean rightclick(TECrop crop, EntityPlayer player) {
         World world = crop.worldObj;
@@ -117,7 +119,9 @@ public class VineCrop extends CropCard {
 
         return true;
     }
+    */
 
+    /*
     @Override
     public boolean leftclick(TECrop crop, EntityPlayer player) {
         World world = crop.worldObj;
@@ -127,6 +131,11 @@ public class VineCrop extends CropCard {
 
         player.addChatMessage("left-clicked");
 
-        return true;
+        if (canBeHarvested(crop)) {
+            // TODO
+        }
+
+        crop.pick(true);
     }
+    */
 }
