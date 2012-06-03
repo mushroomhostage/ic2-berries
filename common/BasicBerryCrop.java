@@ -5,14 +5,14 @@ import net.minecraft.src.*;
 import net.minecraft.src.forge.*;
 
 public abstract class BasicBerryCrop extends CropCard {
-    public int seed;
+    public ItemStack seed;
     public int spriteIndex;
 
-    public BasicBerryCrop(int id, int seed, int spriteIndex) {
+    public BasicBerryCrop(int id, ItemStack seed, int spriteIndex) {
         this.seed = seed;
         this.spriteIndex = spriteIndex;
 
-        CropCard.registerBaseSeed(new ItemStack(seed, 1, 0), id, 1, 10, 10, 10);
+        CropCard.registerBaseSeed(seed, id, 1, 10, 10, 10);
     }
 
     @Override
@@ -75,7 +75,9 @@ public abstract class BasicBerryCrop extends CropCard {
 
     @Override
     public ItemStack getGain(TECrop crop) {
-        return new ItemStack(seed, 5, 1);   // TODO: + random
+        ItemStack drop = new ItemStack(seed.itemID, 5, seed.getItemDamage());  // TODO: + random quantity
+
+        return drop;
     }
 
     @Override
