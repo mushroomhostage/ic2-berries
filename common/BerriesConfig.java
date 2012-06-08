@@ -28,12 +28,12 @@ public class BerriesConfig {
     }
 
     public void registerCrops() {
-        if (cropid_vine != 0) CropCard.registerCrop(new VineCrop(cropid_vine), cropid_vine);
-        if (cropid_blackberry != 0) CropCard.registerCrop(new BlackberryCrop(cropid_blackberry), cropid_blackberry);
-        if (cropid_raspberry != 0) CropCard.registerCrop(new RaspberryCrop(cropid_raspberry), cropid_raspberry);
-        if (cropid_strawberry != 0) CropCard.registerCrop(new StrawberryCrop(cropid_strawberry), cropid_strawberry);
-        if (cropid_blueberry != 0) CropCard.registerCrop(new BlueberryCrop(cropid_blueberry), cropid_blueberry);
-        if (cropid_huckleberry != 0) CropCard.registerCrop(new HuckleberryCrop(cropid_huckleberry), cropid_huckleberry);
+        if (cropid_vine != 0) new VineCrop(cropid_vine);
+        if (cropid_blackberry != 0) new BlackberryCrop(cropid_blackberry);
+        if (cropid_raspberry != 0) new RaspberryCrop(cropid_raspberry);
+        if (cropid_strawberry != 0) new StrawberryCrop(cropid_strawberry);
+        if (cropid_blueberry != 0) new BlueberryCrop(cropid_blueberry);
+        if (cropid_huckleberry != 0) new HuckleberryCrop(cropid_huckleberry);
     }
 }
 

@@ -9,10 +9,12 @@ public abstract class BasicBerryCrop extends CropCard {
     public int spriteIndex;
 
     public BasicBerryCrop(int id, ItemStack seed, int spriteIndex) {
+        CropCard.registerBaseSeed(seed, id, 1, 10, 10, 10);
+
         this.seed = seed;
         this.spriteIndex = spriteIndex;
 
-        CropCard.registerBaseSeed(seed, id, 1, 10, 10, 10);
+        CropCard.registerCrop(this, id);
     }
 
     @Override

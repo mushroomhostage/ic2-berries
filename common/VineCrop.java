@@ -7,6 +7,7 @@ import net.minecraft.src.forge.*;
 public class VineCrop extends CropCard {
     public VineCrop(int id) {
         CropCard.registerBaseSeed(new ItemStack(Block.vine.blockID, 1, 0), id, 1, 10, 10, 10);
+        CropCard.registerCrop(this, id);
     }
 
     @Override
