@@ -16,24 +16,24 @@ public class BerriesConfig {
         try {
             config.load();
         } catch (RuntimeException e) {
+            e.printStackTrace();
         }
 
-        // TODO: load
-        cropid_vine = 60;
-        cropid_blackberry = 61;
-        cropid_raspberry = 62;
-        cropid_strawberry = 63;
-        cropid_blueberry = 64;
-        cropid_huckleberry = 65;
+        cropid_vine = Integer.parseInt(config.getOrCreateIntProperty("cropid.vine", Configuration.CATEGORY_GENERAL, 60).value);
+        cropid_blackberry = Integer.parseInt(config.getOrCreateIntProperty("cropid.blackberry", Configuration.CATEGORY_GENERAL, 61).value);
+        cropid_raspberry = Integer.parseInt(config.getOrCreateIntProperty("cropid.raspberry", Configuration.CATEGORY_GENERAL, 62).value);
+        cropid_strawberry = Integer.parseInt(config.getOrCreateIntProperty("cropid.strawberry", Configuration.CATEGORY_GENERAL, 63).value);
+        cropid_blueberry = Integer.parseInt(config.getOrCreateIntProperty("cropid.blueberry", Configuration.CATEGORY_GENERAL, 64).value);
+        cropid_huckleberry = Integer.parseInt(config.getOrCreateIntProperty("cropid.huckleberry", Configuration.CATEGORY_GENERAL, 65).value);
     }
 
     public void registerCrops() {
-        CropCard.registerCrop(new VineCrop(cropid_vine), cropid_vine);
-        CropCard.registerCrop(new BlackberryCrop(cropid_blackberry), cropid_blackberry);
-        CropCard.registerCrop(new RaspberryCrop(cropid_raspberry), cropid_raspberry);
-        CropCard.registerCrop(new StrawberryCrop(cropid_strawberry), cropid_strawberry);
-        CropCard.registerCrop(new BlueberryCrop(cropid_blueberry), cropid_blueberry);
-        CropCard.registerCrop(new HuckleberryCrop(cropid_huckleberry), cropid_huckleberry);
+        if (cropid_vine != 0) CropCard.registerCrop(new VineCrop(cropid_vine), cropid_vine);
+        if (cropid_blackberry != 0) CropCard.registerCrop(new BlackberryCrop(cropid_blackberry), cropid_blackberry);
+        if (cropid_raspberry != 0) CropCard.registerCrop(new RaspberryCrop(cropid_raspberry), cropid_raspberry);
+        if (cropid_strawberry != 0) CropCard.registerCrop(new StrawberryCrop(cropid_strawberry), cropid_strawberry);
+        if (cropid_blueberry != 0) CropCard.registerCrop(new BlueberryCrop(cropid_blueberry), cropid_blueberry);
+        if (cropid_huckleberry != 0) CropCard.registerCrop(new HuckleberryCrop(cropid_huckleberry), cropid_huckleberry);
     }
 }
 
