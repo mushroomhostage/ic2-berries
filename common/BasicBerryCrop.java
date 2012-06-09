@@ -35,11 +35,6 @@ public abstract class BasicBerryCrop extends CropCard {
     }
 
     @Override
-    public String[] attributes() {
-        return new String[] {"Edible", "Berry", "Primitive"};
-    }
-
-    @Override
     public int getSpriteIndex(TECrop crop) {
         return crop.size - 1 + spriteIndex;
     }

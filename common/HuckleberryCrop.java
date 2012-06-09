@@ -13,6 +13,11 @@ public class HuckleberryCrop extends BasicBerryCrop {
         return "Huckleberry";
     }
 
+    public String[] attributes() {
+        return new String[] {"Berry", "Food", "Tendrilly", "Purple", "Leaves"}; // Purple like CropVenomilia, Leaves like CropFerru
+    }
+
+
     public String discoveredBy() {
         return "Ancient cultures";
     }

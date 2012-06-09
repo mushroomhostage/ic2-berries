@@ -13,6 +13,10 @@ public class BlackberryCrop extends BasicBerryCrop {
         return "Blackberry";
     }
 
+    public String[] attributes() {
+        return new String[] {"Berry", "Food", "Tendrilly", "Black", "Purple"}; // purple like CropVenomilia
+    }
+
     public String discoveredBy() {
         return "Ancient cultures";
     }

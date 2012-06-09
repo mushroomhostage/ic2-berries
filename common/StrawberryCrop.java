@@ -13,6 +13,11 @@ public class StrawberryCrop extends BasicBerryCrop {
         return "Strawberry";
     }
 
+    public String[] attributes() {
+        return new String[] {"Berry", "Food", "Tendrilly", "Red"}; // Red like CropRedWheat, CropNetherWart
+    }
+
+
     public String discoveredBy() {
         return "Ancient cultures";
     }
