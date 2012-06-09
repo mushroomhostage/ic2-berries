@@ -4,9 +4,8 @@ import net.minecraft.src.forge.*;
 
 public class HuckleberryCrop extends BasicBerryCrop {
     final static public int spriteIndex = 16 * 5;
-    final static public ItemStack item = new ItemStack(20000, 1, 6);
 
-    public HuckleberryCrop(int id) {
+    public HuckleberryCrop(int id, ItemStack item) {
         super(id, item, spriteIndex);
     }
 
