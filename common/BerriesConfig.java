@@ -41,6 +41,8 @@ public class BerriesConfig {
         item_strawberry = getItem("item.strawberry", 0, 0);  // not in Trees++  TODO: new custom item
         item_blueberry = getItem("item.blueberry", 20000, 7);
         item_huckleberry = getItem("item.huckleberry", 20000, 6);
+
+        config.save();
     }
 
     public int getInt(String key, int defaultValue) {
