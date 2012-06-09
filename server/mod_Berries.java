@@ -16,7 +16,7 @@ public class mod_Berries extends NetworkMod {
     }
 
     public String getVersion() {
-        return "0";
+        return "1.0";
     }
 
     public String getPriorities() {
