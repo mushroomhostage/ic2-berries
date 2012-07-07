@@ -55,7 +55,7 @@ public class BerriesConfig {
             return null;
         }
 
-        int damage = this.getInt(key + "-damage", defaultDamage);  // TODO: read string as id:damage instead
+        int damage = this.getInt(key + ".damage", defaultDamage);
 
         return new ItemStack(id, 1, damage);
     }
