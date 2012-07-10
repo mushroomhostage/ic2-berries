@@ -1,0 +1,21 @@
+[
+{
+  "modid": "mod_Berries",
+  "name": "Berries++",
+  "description": "Adds several berry crops to IndustrialCraft^2",
+  "version": "1.0a",
+  "mcversion": "1.2.5",
+  "url": "http://forum.industrial-craft.net/index.php?page=Thread&postID=62214",
+  "updateUrl": "",
+  "authors": [
+    "mushroomhostage"
+  ],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [ ],
+  "dependencies": [
+     "mod_MinecraftForge",
+     "mod_IC2"
+  ]
+}
+]
