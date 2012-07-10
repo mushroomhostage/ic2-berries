@@ -14,13 +14,11 @@ public class BerriesConfig {
     public final int cropid_blueberry;
     public final int cropid_huckleberry;
 
-    public final int basicberry_id;
-    
-    public final Item item_blackberry;
-    public final Item item_raspberry;
-    public final Item item_strawberry;
-    public final Item item_blueberry;
-    public final Item item_huckleberry;
+    public final ItemStack item_blackberry;
+    public final ItemStack item_raspberry;
+    public final ItemStack item_strawberry;
+    public final ItemStack item_blueberry;
+    public final ItemStack item_huckleberry;
 
     public BerriesConfig(Configuration config) {
         this.config = config;
@@ -38,27 +36,11 @@ public class BerriesConfig {
         cropid_blueberry = getInt("cropid.blueberry", 64);
         cropid_huckleberry = getInt("cropid.huckleberry", 65);
 
-        basicberry_id = getInt("item.basicberry", 19999);
-        item_blackberry = new ItemBasicBerry(basicberry_id).setIconCoord(5, 1);
-        item_raspberry = new ItemBasicBerry(basicberry_id).setIconCoord(5, 2);
-        item_strawberry = new ItemBasicBerry(basicberry_id).setIconCoord(5, 3);
-        item_blueberry = new ItemBasicBerry(basicberry_id).setIconCoord(5, 4);
-        item_huckleberry = new ItemBasicBerry(basicberry_id).setIconCoord(5, 5);
-
-        ModLoader.addName(item_blackberry, "Blackberry");
-        ModLoader.addName(item_raspberry, "Raspberry");
-        ModLoader.addName(item_strawberry, "Strawberry");
-        ModLoader.addName(item_blueberry, "Blueberry");
-        ModLoader.addName(item_huckleberry, "Huckleberry");
-
-
-        /* TODO: add Trees++ seeds! compatibility
         item_blackberry = getItem("item.blackberry", 20000, 5);
         item_raspberry = getItem("item.raspberry", 20000, 8);
         item_strawberry = getItem("item.strawberry", 0, 0);  // not in Trees++  TODO: new custom item
         item_blueberry = getItem("item.blueberry", 20000, 7);
         item_huckleberry = getItem("item.huckleberry", 20000, 6);
-        */
 
         config.save();
     }
