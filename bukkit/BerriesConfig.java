@@ -59,7 +59,7 @@ public class BerriesConfig
         }
         else
         {
-            int var5 = this.getInt(var1 + "-damage", var3);
+            int var5 = this.getInt(var1 + ".damage", var3);
             return new ItemStack(var4, 1, var5);
         }
     }
